@@ -1,6 +1,7 @@
 import React from 'react';
+import { IntervalEnhance } from './interval-enhance';
 
-export default class CardItem extends React.Component {
+class CardItem extends React.Component {
   static propTypes = {
     title: React.PropTypes.string.isRequired,
     price: React.PropTypes.number.isRequired,
@@ -70,7 +71,13 @@ export default class CardItem extends React.Component {
         <h3 className="large-12 column text-center">
           Total: ${this.state.total}
         </h3>
+
+        <p className="large-12 column">
+          <strong>Time elapsed for interval: </strong> {this.props.seconds} ms
+        </p>
       </article>
     );
   }
 }
+
+export default IntervalEnhance(CardItem);
