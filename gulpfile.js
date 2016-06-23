@@ -10,7 +10,7 @@ gulp.task('build', function () {
     debug: true
   })
     .transform('babelify', {
-      presets: ['es2015', 'react']
+      presets: ['es2015', 'react', 'stage-0']
     })
     .bundle()
     .pipe(source('bundle.js'))
